@@ -1,0 +1,3616 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta name="theme-color" content="#000000">
+
+    <meta
+        name="description"
+        content="Asset Recovery Investigation — Expert investigation and support for recovering lost, scammed, or hacked digital and financial assets."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <title>
+        Asset Recovery Investigation | Cyber Forensics
+    </title>
+
+
+    <!-- =========================================================
+         GOOGLE FONTS
+         ========================================================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         FONT AWESOME
+         ========================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+
+    <!-- =========================================================
+         AOS
+         ========================================================= -->
+
+    <link
+        href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+        rel="stylesheet"
+    >
+
+    <script
+        src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+
+
+    <!-- =========================================================
+         TAILWIND
+         ========================================================= -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    fontFamily: {
+
+                        sans: [
+                            'Inter',
+                            'sans-serif'
+                        ]
+
+                    },
+
+
+                    colors: {
+
+                        brand: {
+
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+
+                        },
+
+
+                        navy: {
+
+                            800: '#0f172a',
+                            900: '#020617'
+
+                        }
+
+                    },
+
+
+                    animation: {
+
+                        'float':
+                            'float 6s ease-in-out infinite',
+
+                        'pulse-glow':
+                            'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+
+                    },
+
+
+                    keyframes: {
+
+                        float: {
+
+                            '0%, 100%': {
+
+                                transform:
+                                    'translateY(0)'
+
+                            },
+
+                            '50%': {
+
+                                transform:
+                                    'translateY(-15px)'
+
+                            }
+
+                        },
+
+
+                        pulseGlow: {
+
+                            '0%, 100%': {
+
+                                opacity: 1,
+
+                                filter:
+                                    'drop-shadow(0 0 10px rgba(34, 197, 94, 0.9))'
+
+                            },
+
+                            '50%': {
+
+                                opacity: .6,
+
+                                filter:
+                                    'drop-shadow(0 0 4px rgba(34, 197, 94, 0.4))'
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        };
+
+    </script>
+
+
+    <!-- =========================================================
+         COMPLETE RESPONSIVE CSS
+         ========================================================= -->
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+
+            width: 100%;
+            min-width: 0;
+
+            overflow-x: hidden;
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            width: 100%;
+            min-width: 0;
+
+            margin: 0;
+            padding: 0;
+
+            background-color: #000000;
+
+            background-image:
+
+                radial-gradient(
+                    circle at 15% 50%,
+                    rgba(37, 99, 235, 0.1),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(56, 189, 248, 0.08),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    rgba(37, 99, 235, 0.03) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(37, 99, 235, 0.03) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+
+                100% 100%,
+                100% 100%,
+                40px 40px,
+                40px 40px;
+
+            color: #f8fafc;
+
+            overflow-x: hidden;
+
+            font-family:
+                'Inter',
+                sans-serif;
+
+        }
+
+
+        img {
+
+            max-width: 100%;
+            height: auto;
+            display: block;
+
+        }
+
+
+        button,
+        a,
+        input,
+        textarea {
+
+            -webkit-tap-highlight-color:
+                transparent;
+
+        }
+
+
+        /* =====================================================
+           GLASS PANELS
+           ===================================================== */
+
+        .glass-panel {
+
+            background:
+                rgba(15, 23, 42, 0.6);
+
+            backdrop-filter:
+                blur(16px);
+
+            -webkit-backdrop-filter:
+                blur(16px);
+
+            border:
+                1px solid
+                rgba(96, 165, 250, 0.15);
+
+            box-shadow:
+                0 25px 50px -12px
+                rgba(0, 0, 0, 0.8);
+
+            border-radius:
+                1rem;
+
+        }
+
+
+        .glass-nav {
+
+            background:
+                rgba(0, 0, 0, 0.92);
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            border-bottom:
+                1px solid
+                rgba(59, 130, 246, 0.15);
+
+        }
+
+
+        /* =====================================================
+           TEXT GRADIENT
+           ===================================================== */
+
+        .text-gradient {
+
+            background:
+                linear-gradient(
+                    to right,
+                    #93c5fd,
+                    #38bdf8,
+                    #2563eb
+                );
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+
+            background-clip:
+                text;
+
+        }
+
+
+        /* =====================================================
+           GREEN CHECK
+           ===================================================== */
+
+        .glow-check {
+
+            color:
+                #22c55e;
+
+            filter:
+                drop-shadow(
+                    0 0 8px
+                    rgba(34, 197, 94, 0.8)
+                );
+
+        }
+
+
+        /* =====================================================
+           SCROLLBAR
+           ===================================================== */
+
+        ::-webkit-scrollbar {
+
+            width:
+                7px;
+
+        }
+
+
+        ::-webkit-scrollbar-track {
+
+            background:
+                #000000;
+
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+
+            background:
+                #1e3a8a;
+
+            border-radius:
+                999px;
+
+        }
+
+
+        ::-webkit-scrollbar-thumb:hover {
+
+            background:
+                #3b82f6;
+
+        }
+
+
+        /* =====================================================
+           REVIEW SLIDER
+           ===================================================== */
+
+        .slider-container {
+
+            width:
+                100%;
+
+            overflow:
+                hidden;
+
+            position:
+                relative;
+
+            padding:
+                1rem 0;
+
+        }
+
+
+        .slider-track {
+
+            display:
+                flex;
+
+            transition:
+                transform
+                0.3s
+                cubic-bezier(
+                    0.25,
+                    1,
+                    0.5,
+                    1
+                );
+
+            will-change:
+                transform;
+
+        }
+
+
+        .slider-item {
+
+            flex:
+                0 0 100%;
+
+            padding:
+                0 0.5rem;
+
+            min-width:
+                0;
+
+        }
+
+
+        @media (min-width:768px) {
+
+            .slider-item {
+
+                flex:
+                    0 0 50%;
+
+                padding:
+                    0 1rem;
+
+            }
+
+        }
+
+
+        @media (min-width:1024px) {
+
+            .slider-item {
+
+                flex:
+                    0 0 33.333%;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           FLOATING CONTACT BUTTONS
+           ===================================================== */
+
+        .floating-contact-wrapper {
+
+            position:
+                fixed;
+
+            right:
+                max(
+                    10px,
+                    env(safe-area-inset-right)
+                );
+
+            bottom:
+                max(
+                    14px,
+                    env(safe-area-inset-bottom)
+                );
+
+            z-index:
+                99999;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            gap:
+                9px;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .floating-contact {
+
+            width:
+                50px;
+
+            height:
+                50px;
+
+            min-width:
+                50px;
+
+            min-height:
+                50px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            position:
+                relative;
+
+            border-radius:
+                9999px;
+
+            color:
+                #ffffff;
+
+            text-decoration:
+                none;
+
+            pointer-events:
+                auto;
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+
+            border:
+                2px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .4
+                );
+
+        }
+
+
+        .floating-contact i {
+
+            font-size:
+                21px;
+
+        }
+
+
+        .floating-whatsapp {
+
+            background:
+                #25D366;
+
+            box-shadow:
+                0 0 16px
+                rgba(37,211,102,.7),
+                0 7px 20px
+                rgba(0,0,0,.55);
+
+        }
+
+
+        .floating-email {
+
+            background:
+                #EA4335;
+
+            box-shadow:
+                0 0 16px
+                rgba(234,67,53,.7),
+                0 7px 20px
+                rgba(0,0,0,.55);
+
+        }
+
+
+        .floating-contact:active {
+
+            transform:
+                scale(.92);
+
+        }
+
+
+        .floating-contact:hover {
+
+            transform:
+                scale(1.07)
+                translateY(-3px);
+
+        }
+
+
+        .floating-contact-label {
+
+            position:
+                absolute;
+
+            right:
+                62px;
+
+            white-space:
+                nowrap;
+
+            padding:
+                6px 9px;
+
+            border-radius:
+                7px;
+
+            background:
+                rgba(0,0,0,.94);
+
+            border:
+                1px solid
+                rgba(96,165,250,.4);
+
+            color:
+                white;
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+
+            text-transform:
+                uppercase;
+
+            opacity:
+                0;
+
+            pointer-events:
+                none;
+
+            transform:
+                translateX(7px);
+
+            transition:
+                all .2s ease;
+
+        }
+
+
+        .floating-contact:hover
+        .floating-contact-label {
+
+            opacity:
+                1;
+
+            transform:
+                translateX(0);
+
+        }
+
+
+        .floating-contact-pulse {
+
+            position:
+                absolute;
+
+            inset:
+                -4px;
+
+            border-radius:
+                9999px;
+
+            border:
+                2px solid
+                currentColor;
+
+            opacity:
+                .25;
+
+            animation:
+                floatingPulse
+                2.2s
+                ease-out
+                infinite;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        @keyframes floatingPulse {
+
+            0% {
+
+                transform:
+                    scale(.95);
+
+                opacity:
+                    .5;
+
+            }
+
+            70% {
+
+                transform:
+                    scale(1.25);
+
+                opacity:
+                    0;
+
+            }
+
+            100% {
+
+                transform:
+                    scale(1.25);
+
+                opacity:
+                    0;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           AFFILIATION SECTION
+           ===================================================== */
+
+        .affiliation-section {
+
+            width:
+                100%;
+
+            margin-top:
+                45px;
+
+            padding-top:
+                30px;
+
+            border-top:
+                1px solid
+                rgba(
+                    59,
+                    130,
+                    246,
+                    .12
+                );
+
+        }
+
+
+        .affiliation-title {
+
+            color:
+                #64748b;
+
+            font-size:
+                9px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                .18em;
+
+            text-transform:
+                uppercase;
+
+            text-align:
+                center;
+
+            margin-bottom:
+                18px;
+
+        }
+
+
+        .affiliation-row {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            max-width:
+                900px;
+
+            margin:
+                0 auto;
+
+        }
+
+
+        .affiliation-badge {
+
+            min-width:
+                70px;
+
+            height:
+                55px;
+
+            padding:
+                7px 10px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                7px;
+
+            border:
+                1px solid
+                rgba(
+                    96,
+                    165,
+                    250,
+                    .16
+                );
+
+            background:
+                rgba(
+                    15,
+                    23,
+                    42,
+                    .55
+                );
+
+            border-radius:
+                10px;
+
+            color:
+                #cbd5e1;
+
+            transition:
+                all .25s ease;
+
+        }
+
+
+        .affiliation-badge:hover {
+
+            transform:
+                translateY(-3px);
+
+            border-color:
+                rgba(
+                    96,
+                    165,
+                    250,
+                    .55
+                );
+
+            background:
+                rgba(
+                    30,
+                    64,
+                    175,
+                    .2
+                );
+
+            box-shadow:
+                0 0 20px
+                rgba(
+                    37,
+                    99,
+                    235,
+                    .15
+                );
+
+        }
+
+
+        .affiliation-logo {
+
+            width:
+                30px;
+
+            height:
+                30px;
+
+            border-radius:
+                8px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1e3a8a,
+                    #2563eb
+                );
+
+            border:
+                1px solid
+                rgba(
+                    147,
+                    197,
+                    253,
+                    .3
+                );
+
+            color:
+                #ffffff;
+
+            font-size:
+                9px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                -.03em;
+
+            flex:
+                0 0 30px;
+
+        }
+
+
+        .affiliation-logo img {
+
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            border-radius: 7px;
+            background: #ffffff;
+
+        }
+
+        .affiliation-badge {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .review-country {
+            color:#cbd5e1;
+            font-size:11px;
+            font-weight:700;
+            margin-top:4px;
+            display:flex;
+            align-items:center;
+            gap:5px;
+        }
+
+        .affiliation-name {
+
+            font-size:
+                8px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                .04em;
+
+            text-transform:
+                uppercase;
+
+            line-height:
+                1.15;
+
+        }
+
+
+        .powered-label {
+
+            color:
+                #475569;
+
+            font-size:
+                8px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                .18em;
+
+            text-transform:
+                uppercase;
+
+            text-align:
+                center;
+
+            margin-bottom:
+                12px;
+
+        }
+
+
+        /* =====================================================
+           MOBILE NAVIGATION
+           ===================================================== */
+
+        @media (max-width:767px) {
+
+            nav {
+
+                height:
+                    72px;
+
+            }
+
+
+            nav .h-24 {
+
+                height:
+                    72px;
+
+            }
+
+
+            nav .px-4 {
+
+                padding-left:
+                    12px;
+
+                padding-right:
+                    12px;
+
+            }
+
+
+            nav a.flex.items-center {
+
+                gap:
+                    8px;
+
+                min-width:
+                    0;
+
+            }
+
+
+            nav a.flex.items-center img {
+
+                width:
+                    43px;
+
+                height:
+                    43px;
+
+                flex:
+                    0 0 43px;
+
+            }
+
+
+            nav a.flex.items-center
+            span.font-black {
+
+                font-size:
+                    15px;
+
+                line-height:
+                    1;
+
+            }
+
+
+            nav a.flex.items-center
+            span.text-\[10px\] {
+
+                font-size:
+                    6.5px;
+
+                letter-spacing:
+                    .11em;
+
+                margin-top:
+                    3px;
+
+                white-space:
+                    nowrap;
+
+            }
+
+
+            #mobile-menu-btn {
+
+                width:
+                    45px;
+
+                height:
+                    45px;
+
+                display:
+                    flex;
+
+                align-items:
+                    center;
+
+                justify-content:
+                    center;
+
+                border-radius:
+                    10px;
+
+                background:
+                    rgba(
+                        37,
+                        99,
+                        235,
+                        .12
+                    );
+
+                border:
+                    1px solid
+                    rgba(
+                        96,
+                        165,
+                        250,
+                        .25
+                    );
+
+            }
+
+
+            #mobile-menu-btn i {
+
+                font-size:
+                    23px;
+
+            }
+
+
+            #mobile-menu {
+
+                width:
+                    100%;
+
+                max-height:
+                    calc(
+                        100vh - 72px
+                    );
+
+                overflow-y:
+                    auto;
+
+            }
+
+
+            /* HERO */
+
+            main {
+
+                padding-top:
+                    94px !important;
+
+                padding-bottom:
+                    55px !important;
+
+            }
+
+
+            main
+            .max-w-7xl {
+
+                padding-left:
+                    12px !important;
+
+                padding-right:
+                    12px !important;
+
+            }
+
+
+            main h1 {
+
+                font-size:
+                    clamp(
+                        29px,
+                        8.5vw,
+                        40px
+                    );
+
+                line-height:
+                    1.08;
+
+                letter-spacing:
+                    -.045em;
+
+            }
+
+
+            main p {
+
+                font-size:
+                    14px;
+
+                line-height:
+                    1.7;
+
+            }
+
+
+            main ul {
+
+                padding:
+                    16px;
+
+            }
+
+
+            main ul li {
+
+                font-size:
+                    13px;
+
+            }
+
+
+            /* SECTIONS */
+
+            section
+            .max-w-7xl,
+            section
+            .max-w-4xl {
+
+                width:
+                    100%;
+
+                max-width:
+                    100%;
+
+                padding-left:
+                    12px !important;
+
+                padding-right:
+                    12px !important;
+
+            }
+
+
+            section.py-24 {
+
+                padding-top:
+                    60px;
+
+                padding-bottom:
+                    60px;
+
+            }
+
+
+            section h3 {
+
+                font-size:
+                    27px;
+
+                line-height:
+                    1.15;
+
+            }
+
+
+            /* FOOTER */
+
+            footer {
+
+                padding-bottom:
+                    115px !important;
+
+            }
+
+
+            .affiliation-section {
+
+                margin-top:
+                    30px;
+
+                padding-top:
+                    25px;
+
+            }
+
+
+            .affiliation-row {
+
+                gap:
+                    7px;
+
+            }
+
+
+            .affiliation-badge {
+
+                min-width:
+                    62px;
+
+                height:
+                    49px;
+
+                padding:
+                    5px 7px;
+
+                flex:
+                    0 1 auto;
+
+            }
+
+
+            .affiliation-logo {
+
+                width:
+                    26px;
+
+                height:
+                    26px;
+
+                flex:
+                    0 0 26px;
+
+                font-size:
+                    8px;
+
+            }
+
+
+            .affiliation-name {
+
+                font-size:
+                    7px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           EXTRA SMALL PHONES
+           ===================================================== */
+
+        @media (max-width:380px) {
+
+            nav a.flex.items-center img {
+
+                width:
+                    38px;
+
+                height:
+                    38px;
+
+                flex:
+                    0 0 38px;
+
+            }
+
+
+            nav a.flex.items-center
+            span.font-black {
+
+                font-size:
+                    13px;
+
+            }
+
+
+            #mobile-menu-btn {
+
+                width:
+                    42px;
+
+                height:
+                    42px;
+
+            }
+
+
+            #mobile-menu-btn i {
+
+                font-size:
+                    21px;
+
+            }
+
+
+            .floating-contact {
+
+                width:
+                    47px;
+
+                height:
+                    47px;
+
+                min-width:
+                    47px;
+
+                min-height:
+                    47px;
+
+            }
+
+
+            .floating-contact-wrapper {
+
+                right:
+                    9px;
+
+                gap:
+                    8px;
+
+            }
+
+
+            .affiliation-badge {
+
+                min-width:
+                    57px;
+
+                height:
+                    46px;
+
+                padding:
+                    4px;
+
+            }
+
+
+            .affiliation-logo {
+
+                width:
+                    24px;
+
+                height:
+                    24px;
+
+                flex:
+                    0 0 24px;
+
+            }
+
+
+            .affiliation-name {
+
+                font-size:
+                    6px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           DESKTOP FLOATING BUTTONS
+           ===================================================== */
+
+        @media (min-width:768px) {
+
+            .floating-contact {
+
+                width:
+                    58px;
+
+                height:
+                    58px;
+
+            }
+
+
+            .floating-contact i {
+
+                font-size:
+                    25px;
+
+            }
+
+
+            .floating-contact-wrapper {
+
+                right:
+                    20px;
+
+                bottom:
+                    22px;
+
+                gap:
+                    12px;
+
+            }
+
+        }
+
+    
+        @media (max-width:767px) {
+            body { width:100%; overflow-x:hidden; }
+            nav { padding-left:0; padding-right:0; }
+            nav > div { width:100%; max-width:none; }
+            nav .h-24 { min-height:64px; }
+            nav a.flex.items-center { max-width:calc(100vw - 72px); }
+            nav a.flex.items-center .font-black { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+            #mobile-menu-btn { flex:0 0 44px; }
+            .floating-contact-wrapper { right:max(8px,env(safe-area-inset-right)); bottom:max(12px,env(safe-area-inset-bottom)); }
+            .floating-contact { width:48px; height:48px; min-width:48px; min-height:48px; }
+            .floating-contact-label { display:none; }
+            .affiliation-row { width:100%; }
+            .affiliation-badge { max-width:calc(50% - 5px); }
+        }
+    </style>
+
+</head>
+
+
+<body
+    class="antialiased selection:bg-brand-500 selection:text-white relative"
+>
+
+
+    <!-- =========================================================
+         FLOATING CONTACT BUTTONS
+         ========================================================= -->
+
+    <div
+        class="floating-contact-wrapper"
+        aria-label="Contact options"
+    >
+
+        <!-- WHATSAPP -->
+
+        <a
+            href="https://wa.me/351961238035"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="floating-contact floating-whatsapp"
+            aria-label="Contact Support on WhatsApp"
+            title="Contact Support on WhatsApp"
+        >
+
+            <span
+                class="floating-contact-pulse"
+            ></span>
+
+            <i
+                class="fa-brands fa-whatsapp"
+            ></i>
+
+            <span
+                class="floating-contact-label"
+            >
+                WhatsApp Support
+            </span>
+
+        </a>
+
+
+        <!-- EMAIL -->
+
+        <a
+            href="mailto:assetsrecoveryinvestigatory@gmail.com"
+            class="floating-contact floating-email"
+            aria-label="Send us an Email"
+            title="Send us an Email"
+        >
+
+            <span
+                class="floating-contact-pulse"
+            ></span>
+
+            <i
+                class="fa-solid fa-envelope"
+            ></i>
+
+            <span
+                class="floating-contact-label"
+            >
+                Send Email
+            </span>
+
+        </a>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         BACKGROUND EFFECT
+         ========================================================= -->
+
+    <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] opacity-20 pointer-events-none"
+        style="
+            background:
+            radial-gradient(
+                circle,
+                #38bdf8 0%,
+                transparent 60%
+            );
+            filter: blur(120px);
+        "
+    ></div>
+
+
+
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
+
+    <nav
+        class="fixed w-full top-0 z-50 glass-nav transition-all duration-300"
+    >
+
+        <div
+            class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8"
+        >
+
+            <div
+                class="flex justify-between items-center h-24"
+            >
+
+                <!-- LOGO -->
+
+                <a
+                    href="#"
+                    class="flex items-center gap-4 group min-w-0"
+                >
+
+                    <img
+                        src="https://www.dropbox.com/scl/fi/zf4k4tw7esrhzwgcwbrtg/file_000000005ae481f4ac5126d011086594.png?rlkey=93ejg4lxyqofzrv4pi6np325y&st=qem4pztf&raw=1"
+                        alt="Asset Recovery Investigation Logo"
+                        class="w-16 h-16 object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.8)] group-hover:scale-105 transition-transform duration-300"
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="sync"
+                    >
+
+
+                    <div
+                        class="flex flex-col min-w-0"
+                    >
+
+                        <span
+                            class="font-black text-2xl tracking-tighter text-white uppercase leading-none drop-shadow-md"
+                        >
+
+                            Asset<span
+                                class="text-brand-400"
+                            >Recovery</span>
+
+                        </span>
+
+
+                        <span
+                            class="text-[10px] tracking-widest text-brand-300 uppercase font-bold mt-1 opacity-80"
+                        >
+
+                            Intelligence & Forensics
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- DESKTOP NAV -->
+
+                <div
+                    class="hidden md:flex items-center space-x-8"
+                >
+
+                    <a
+                        href="#services"
+                        class="text-sm font-semibold text-slate-300 hover:text-brand-400 transition-colors uppercase tracking-wide"
+                    >
+                        Forensics
+                    </a>
+
+
+                    <a
+                        href="#process"
+                        class="text-sm font-semibold text-slate-300 hover:text-brand-400 transition-colors uppercase tracking-wide"
+                    >
+                        Protocol
+                    </a>
+
+
+                    <a
+                        href="#reviews"
+                        class="text-sm font-semibold text-slate-300 hover:text-brand-400 transition-colors uppercase tracking-wide"
+                    >
+                        Cases
+                    </a>
+
+
+                    <a
+                        href="#ticket"
+                        class="px-7 py-3 rounded-lg bg-brand-600 hover:bg-brand-500 text-sm font-bold text-white transition-all shadow-[0_0_20px_rgba(37,99,235,0.5)] hover:shadow-[0_0_30px_rgba(96,165,250,0.7)] border border-brand-400/50"
+                    >
+
+                        OPEN CASE FILE
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- MOBILE MENU BUTTON -->
+
+                <div
+                    class="md:hidden flex items-center ml-auto"
+                >
+
+                    <button
+                        id="mobile-menu-btn"
+                        type="button"
+                        class="text-brand-400 hover:text-white focus:outline-none transition-colors"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                    >
+
+                        <i
+                            class="fa-solid fa-bars"
+                        ></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MOBILE MENU -->
+
+        <div
+            id="mobile-menu"
+            class="hidden md:hidden bg-black/95 backdrop-blur-xl border-b border-brand-500/20"
+        >
+
+            <div
+                class="px-3 pt-2 pb-5 space-y-1 flex flex-col"
+            >
+
+                <a
+                    href="#services"
+                    class="block px-3 py-3 text-sm font-medium text-slate-300 hover:text-brand-400 hover:bg-brand-900/30 rounded-md"
+                >
+                    Forensics
+                </a>
+
+
+                <a
+                    href="#process"
+                    class="block px-3 py-3 text-sm font-medium text-slate-300 hover:text-brand-400 hover:bg-brand-900/30 rounded-md"
+                >
+                    Protocol
+                </a>
+
+
+                <a
+                    href="#reviews"
+                    class="block px-3 py-3 text-sm font-medium text-slate-300 hover:text-brand-400 hover:bg-brand-900/30 rounded-md"
+                >
+                    Cases
+                </a>
+
+
+                <a
+                    href="#ticket"
+                    class="block px-3 py-3 mt-3 text-center rounded-md bg-brand-600 text-white font-bold shadow-[0_0_15px_rgba(37,99,235,0.4)]"
+                >
+                    Open Case File
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+
+    <main
+        class="pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pb-32 overflow-hidden"
+    >
+
+        <div
+            class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative"
+        >
+
+            <div
+                class="flex flex-col gap-12 items-center"
+            >
+
+                <!-- HERO TEXT -->
+
+                <div
+                    class="text-center max-w-4xl mx-auto z-10 w-full"
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                >
+
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-brand-500/30 text-brand-300 text-xs font-bold uppercase tracking-widest mb-8"
+                    >
+
+                        <i
+                            class="fa-solid fa-satellite-dish animate-pulse text-brand-400"
+                        ></i>
+
+                        Active Global Tracing Network
+
+                    </div>
+
+
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 text-white leading-[1.1]"
+                    >
+
+                        We Trace & Reclaim
+
+                        <br class="hidden lg:block">
+
+
+                        <span
+                            class="text-gradient"
+                        >
+
+                            Scammed, Lost, Hacked & Defrauded Assets.
+
+                        </span>
+
+                    </h1>
+
+
+                    <p
+                        class="mt-4 text-lg text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed font-light"
+                    >
+
+                        Deploying sophisticated ultra advanced blockchain
+                        forensics and legal intervention. We operate globally
+                        to recover your funds with pinpoint precision.
+
+                    </p>
+
+
+                    <ul
+                        class="text-left space-y-4 mb-10 max-w-md mx-auto bg-navy-900/50 p-6 rounded-xl border border-brand-900/50 backdrop-blur-sm"
+                    >
+
+                        <li
+                            class="flex items-center gap-4 text-slate-200 font-medium"
+                        >
+
+                            <i
+                                class="fa-solid fa-check text-2xl glow-check animate-pulse-glow"
+                            ></i>
+
+                            Advanced Crypto Wallet Tracing
+
+                        </li>
+
+
+                        <li
+                            class="flex items-center gap-4 text-slate-200 font-medium"
+                        >
+
+                            <i
+                                class="fa-solid fa-check text-2xl glow-check animate-pulse-glow"
+                            ></i>
+
+                            Bank Wire Recall & Freeze Protocols
+
+                        </li>
+
+
+                        <li
+                            class="flex items-center gap-4 text-slate-200 font-medium"
+                        >
+
+                            <i
+                                class="fa-solid fa-check text-2xl glow-check animate-pulse-glow"
+                            ></i>
+
+                            Strictly Confidential Operations
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- ORIGINAL IMAGE -->
+
+                <div
+                    class="w-full max-w-3xl relative"
+                    data-aos="zoom-in"
+                    data-aos-duration="1200"
+                >
+
+                    <div
+                        class="absolute inset-0 bg-brand-500 rounded-2xl blur-3xl opacity-20 animate-pulse"
+                    ></div>
+
+
+                    <div
+                        class="relative rounded-2xl overflow-hidden glass-panel border border-brand-500/40 p-3"
+                    >
+
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiGzAyJ6UV9MMEJdu9roDlUoiCXtQftszo0BmohW4bcC3Z7evHZ5AiQ1qv&s=10"
+                            onerror="this.src='https://placehold.co/800x450/0f172a/60a5fa?text=Blockchain+Forensic+Analysis'"
+                            alt="Cyber Forensics Analysis Dashboard"
+                            class="w-full h-auto rounded-xl object-cover shadow-2xl"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="sync"
+                        >
+
+
+                        <div
+                            class="absolute bottom-6 left-6 glass-panel px-4 py-2 flex items-center gap-3 border-brand-400/50 bg-black/80"
+                        >
+
+                            <div
+                                class="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e] animate-pulse"
+                            ></div>
+
+
+                            <span
+                                class="text-xs font-mono font-bold tracking-wider text-brand-200 uppercase"
+                            >
+
+                                BLOCKCHAIN FORENSIC INTELLIGENCE
+                                // SECURE NETWORK
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CLOUDINARY IMAGE -->
+
+                <div
+                    class="w-full max-w-3xl relative"
+                    data-aos="fade-up"
+                >
+
+                    <div
+                        class="absolute inset-0 bg-cyan-500 rounded-2xl blur-3xl opacity-10"
+                    ></div>
+
+
+                    <div
+                        class="relative rounded-2xl overflow-hidden glass-panel border border-brand-500/40 p-3"
+                    >
+
+                        <img
+                            src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/695e7292fb03b4001d4cbac7.jpg"
+                            alt="Asset Recovery Investigation Intelligence"
+                            class="w-full h-auto rounded-xl object-cover shadow-2xl"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="sync"
+                        >
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         SERVICES
+         ========================================================= -->
+
+    <section
+        id="services"
+        class="py-24 relative bg-black/60 border-t border-brand-900/50"
+    >
+
+        <div
+            class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10"
+        >
+
+            <div
+                class="text-center mb-16"
+                data-aos="fade-up"
+            >
+
+                <h2
+                    class="text-brand-400 font-bold tracking-widest uppercase text-sm mb-2"
+                >
+
+                    <i
+                        class="fa-solid fa-crosshairs mr-2"
+                    ></i>
+
+                    Specialized Forensics
+
+                </h2>
+
+
+                <h3
+                    class="text-3xl md:text-4xl font-black text-white"
+                >
+
+                    Recovery Architecture
+
+                </h3>
+
+            </div>
+
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            >
+
+                <div
+                    class="glass-panel p-8 hover:-translate-y-2 transition-transform duration-300 group"
+                    data-aos="fade-up"
+                >
+
+                    <div
+                        class="w-14 h-14 rounded-lg bg-brand-900/50 flex items-center justify-center border border-brand-500/30 mb-6"
+                    >
+
+                        <i
+                            class="fa-solid fa-link text-2xl text-brand-400"
+                        ></i>
+
+                    </div>
+
+
+                    <h4
+                        class="text-xl font-bold text-white mb-3"
+                    >
+
+                        Blockchain Trace
+
+                    </h4>
+
+
+                    <p
+                        class="text-slate-400 text-sm leading-relaxed"
+                    >
+
+                        We trace Bitcoin, Ethereum, and USDT across
+                        decentralized exchanges, mixers, and cold wallets
+                        using proprietary algorithms.
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="glass-panel p-8 hover:-translate-y-2 transition-transform duration-300 group"
+                    data-aos="fade-up"
+                >
+
+                    <div
+                        class="w-14 h-14 rounded-lg bg-brand-900/50 flex items-center justify-center border border-brand-500/30 mb-6"
+                    >
+
+                        <i
+                            class="fa-solid fa-building-columns text-2xl text-brand-400"
+                        ></i>
+
+                    </div>
+
+
+                    <h4
+                        class="text-xl font-bold text-white mb-3"
+                    >
+
+                        Wire Reversal Support
+
+                    </h4>
+
+
+                    <p
+                        class="text-slate-400 text-sm leading-relaxed"
+                    >
+
+                        Direct collaboration with banking compliance
+                        departments to execute SWIFT recalls and freeze
+                        illicit recipient accounts.
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="glass-panel p-8 hover:-translate-y-2 transition-transform duration-300 group"
+                    data-aos="fade-up"
+                >
+
+                    <div
+                        class="w-14 h-14 rounded-lg bg-brand-900/50 flex items-center justify-center border border-brand-500/30 mb-6"
+                    >
+
+                        <i
+                            class="fa-solid fa-user-secret text-2xl text-brand-400"
+                        ></i>
+
+                    </div>
+
+
+                    <h4
+                        class="text-xl font-bold text-white mb-3"
+                    >
+
+                        Scammer Profiling
+
+                    </h4>
+
+
+                    <p
+                        class="text-slate-400 text-sm leading-relaxed"
+                    >
+
+                        OSINT and deep-web scraping to identify individuals
+                        behind phantom corporations and fraudulent investment
+                        platforms.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         CASE STUDIES
+         ========================================================= -->
+
+    <section
+        id="reviews"
+        class="py-24 relative overflow-hidden"
+    >
+
+        <div
+            class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10"
+        >
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-end mb-12"
+            >
+
+                <div>
+
+                    <h2
+                        class="text-brand-400 font-bold tracking-widest uppercase text-sm mb-2"
+                    >
+
+                        <i
+                            class="fa-solid fa-folder-open mr-2"
+                        ></i>
+
+                        Case Studies
+
+                    </h2>
+
+
+                    <h3
+                        class="text-3xl md:text-4xl font-black text-white"
+                    >
+
+                        Closed & Recovered
+
+                    </h3>
+
+                </div>
+
+
+                <div
+                    class="flex gap-3 mt-6 md:mt-0"
+                >
+
+                    <button
+                        id="prevBtn"
+                        type="button"
+                        class="w-11 h-11 rounded-full glass-panel flex items-center justify-center"
+                        aria-label="Previous Review"
+                    >
+
+                        <i
+                            class="fa-solid fa-chevron-left text-brand-300"
+                        ></i>
+
+                    </button>
+
+
+                    <button
+                        id="nextBtn"
+                        type="button"
+                        class="w-11 h-11 rounded-full glass-panel flex items-center justify-center"
+                        aria-label="Next Review"
+                    >
+
+                        <i
+                            class="fa-solid fa-chevron-right text-brand-300"
+                        ></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="slider-container"
+            >
+
+                <div
+                    class="slider-track"
+                    id="sliderTrack"
+                >
+
+                    <!-- REVIEW 1 -->
+
+                    <div
+                        class="slider-item"
+                    >
+
+                        <div
+                            class="glass-panel p-8 h-full"
+                        >
+
+                            <div
+                                class="flex justify-between mb-4"
+                            >
+
+                                <span
+                                    class="text-yellow-400"
+                                >
+                                    ⭐⭐⭐⭐⭐
+                                </span>
+
+
+                                <span
+                                    class="text-xs font-mono text-brand-300"
+                                >
+                                    REC-9942
+                                </span>
+
+                            </div>
+
+
+                            <p
+                                class="text-slate-300 italic leading-relaxed mb-6"
+                            >
+
+                                "Lost $45k to a fake trading platform.
+                                Their forensics team traced the USDT to
+                                a centralized exchange and worked with
+                                authorities to freeze it."
+
+                            </p>
+
+
+                            <div
+                                class="text-sm"
+                            >
+
+                                <strong>
+                                    Michael T.
+                                </strong>
+
+                                <div
+                                    class="text-brand-400 text-xs"
+                                >
+
+                                    Recovered $45,000 USDT
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REVIEW 2 -->
+
+                    <div
+                        class="slider-item"
+                    >
+
+                        <div
+                            class="glass-panel p-8 h-full"
+                        >
+
+                            <div
+                                class="flex justify-between mb-4"
+                            >
+
+                                <span
+                                    class="text-yellow-400"
+                                >
+                                    ⭐⭐⭐⭐⭐
+                                </span>
+
+
+                                <span
+                                    class="text-xs font-mono text-brand-300"
+                                >
+                                    REC-8110
+                                </span>
+
+                            </div>
+
+
+                            <p
+                                class="text-slate-300 italic leading-relaxed mb-6"
+                            >
+
+                                "The investigators were professional,
+                                completely confidential, and managed to
+                                reverse the bank wires before they cleared."
+
+                            </p>
+
+
+                            <div
+                                class="text-sm"
+                            >
+
+                                <strong>
+                                    Sarah L.
+                                </strong>
+
+
+                                <div
+                                    class="text-brand-400 text-xs"
+                                >
+
+                                    Recovered £22,500
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REVIEW 3 -->
+
+                    <div
+                        class="slider-item"
+                    >
+
+                        <div
+                            class="glass-panel p-8 h-full"
+                        >
+
+                            <div
+                                class="flex justify-between mb-4"
+                            >
+
+                                <span
+                                    class="text-yellow-400"
+                                >
+                                    ⭐⭐⭐⭐⭐
+                                </span>
+
+
+                                <span
+                                    class="text-xs font-mono text-brand-300"
+                                >
+                                    REC-7734
+                                </span>
+
+                            </div>
+
+
+                            <p
+                                class="text-slate-300 italic leading-relaxed mb-6"
+                            >
+
+                                "My wallet was drained via a phishing link.
+                                They traced the ETH through multiple
+                                transactions."
+
+                            </p>
+
+
+                            <div
+                                class="text-sm"
+                            >
+
+                                <strong>
+                                    David K.
+                                </strong>
+
+
+                                <div
+                                    class="text-brand-400 text-xs"
+                                >
+
+                                    Recovered 14.2 ETH
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         OPEN CASE
+         ========================================================= -->
+
+    <section
+        id="ticket"
+        class="py-24 relative bg-black border-t border-brand-900/50"
+    >
+
+        <div
+            class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10 text-center"
+        >
+
+            <div
+                class="glass-panel p-10 md:p-16 relative overflow-hidden"
+            >
+
+                <i
+                    class="fa-solid fa-shield-halved text-5xl text-brand-400 mb-6"
+                ></i>
+
+
+                <h2
+                    class="text-3xl md:text-5xl font-black text-white mb-4"
+                >
+
+                    Time is Critical.
+
+                </h2>
+
+
+                <p
+                    class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto"
+                >
+
+                    The faster we begin tracing, the higher the probability
+                    of successful asset freeze and recovery. Open a secure
+                    case file now.
+
+                </p>
+
+
+                <form
+                    class="space-y-4 max-w-lg mx-auto"
+                >
+
+                    <input
+                        type="text"
+                        id="ticketName"
+                        placeholder="Full Name"
+                        autocomplete="name"
+                        class="w-full bg-black/50 border border-brand-500/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-400"
+                    >
+
+
+                    <input
+                        type="text"
+                        id="ticketAmount"
+                        placeholder="Amount Lost"
+                        autocomplete="off"
+                        class="w-full bg-black/50 border border-brand-500/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-400"
+                    >
+
+
+                    <textarea
+                        id="ticketIssue"
+                        rows="3"
+                        placeholder="Briefly describe what happened..."
+                        class="w-full bg-black/50 border border-brand-500/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-400 resize-none"
+                    ></textarea>
+
+
+                    <div
+                        class="flex flex-col sm:flex-row gap-4"
+                    >
+
+                        <button
+                            onclick="sendTicketWA()"
+                            type="button"
+                            class="flex-1 bg-[#25D366] text-white font-bold py-4 rounded-lg uppercase tracking-wider"
+                        >
+
+                            <i
+                                class="fa-brands fa-whatsapp mr-2"
+                            ></i>
+
+                            Send to WhatsApp
+
+                        </button>
+
+
+                        <button
+                            onclick="sendTicketEmail()"
+                            type="button"
+                            class="flex-1 bg-[#EA4335] text-white font-bold py-4 rounded-lg uppercase tracking-wider"
+                        >
+
+                            <i
+                                class="fa-solid fa-envelope mr-2"
+                            ></i>
+
+                            Send to Email
+
+                        </button>
+
+                    </div>
+
+
+                    <p
+                        class="text-xs text-slate-500"
+                    >
+
+                        <i
+                            class="fa-solid fa-lock mr-1"
+                        ></i>
+
+                        End-to-end encrypted protocol.
+                        100% confidential.
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer
+        class="bg-[#020617] py-12 border-t border-brand-900/50"
+    >
+
+        <div
+            class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8"
+        >
+
+
+            <!-- =================================================
+                 MAIN FOOTER ROW
+                 ================================================= -->
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center gap-6"
+            >
+
+                <!-- BRAND -->
+
+                <div
+                    class="flex items-center gap-3"
+                >
+
+                    <img
+                        src="https://www.dropbox.com/scl/fi/zf4k4tw7esrhzwgcwbrtg/file_000000005ae481f4ac5126d011086594.png?rlkey=93ejg4lxyqofzrv4pi6np325y&st=qem4pztf&raw=1"
+                        alt="Asset Recovery Investigation Logo"
+                        class="w-10 h-10 opacity-90"
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="sync"
+                    >
+
+
+                    <div>
+
+                        <div
+                            class="font-black text-lg tracking-tighter text-white uppercase"
+                        >
+
+                            Asset<span
+                                class="text-brand-500"
+                            >
+                                Recovery
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="text-[8px] tracking-[.18em] uppercase text-brand-400 font-bold"
+                        >
+
+                            Intelligence & Forensics
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COPYRIGHT -->
+
+                <div
+                    class="text-slate-500 text-sm text-center"
+                >
+
+                    &copy; 2026 Asset Recovery Investigation.
+
+                    <br>
+
+                    All rights reserved.
+
+
+                    <br>
+
+
+                    <span
+                        class="text-brand-400"
+                    >
+
+                        <i
+                            class="fa-solid fa-location-dot mr-1"
+                        ></i>
+
+                        HQ London UK.
+
+                    </span>
+
+                    Global operations.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 POWERED BY / AFFILIATED WITH
+                 ================================================= -->
+
+            <div
+                class="affiliation-section"
+            >
+
+                <div
+                    class="powered-label"
+                >
+
+                    Powered By
+
+                </div>
+
+
+                <!-- PRIMARY POWERED-BY BRAND -->
+
+                <div
+                    class="flex justify-center mb-7"
+                >
+
+                    <div
+                        class="affiliation-badge"
+                        style="
+                            min-width:180px;
+                            height:60px;
+                            border-color:rgba(96,165,250,.3);
+                            background:rgba(30,64,175,.12);
+                        "
+                    >
+
+                        <div
+                            class="affiliation-logo"
+                            style="
+                                width:38px;
+                                height:38px;
+                                flex:0 0 38px;
+                                font-size:10px;
+                            "
+                        >
+
+                            AR
+
+                        </div>
+
+
+                        <div
+                            class="text-left"
+                        >
+
+                            <div
+                                class="text-white font-black text-[10px] uppercase tracking-wide"
+                            >
+
+                                Asset Recovery
+
+                            </div>
+
+
+                            <div
+                                class="text-brand-400 text-[7px] uppercase tracking-widest font-bold mt-1"
+                            >
+
+                                Intelligence & Forensics
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AFFILIATION LABEL -->
+
+                <div class="powered-label">
+                    Affiliated With
+                </div>
+
+                <!-- =================================================
+                     AFFILIATED ORGANIZATIONS
+                     REAL NAMES + REAL PROVIDED IMAGE LINKS
+                     ================================================= -->
+
+                <div class="affiliation-row">
+
+                    <!-- FEDERAL BUREAU OF INVESTIGATION -->
+                    <a
+                        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwWGheg9H8_tfahycxJ-p2V9vTHKYB6RB5ndZeR_088Q&s=10"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="affiliation-badge"
+                        title="Federal Bureau of Investigation (FBI)"
+                    >
+                        <span class="affiliation-logo">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwWGheg9H8_tfahycxJ-p2V9vTHKYB6RB5ndZeR_088Q&s=10"
+                                alt="Federal Bureau of Investigation (FBI)"
+                                loading="eager"
+                                fetchpriority="high"
+                                decoding="sync"
+                            >
+                        </span>
+                        <span class="affiliation-name">
+                            Federal Bureau<br>
+                            of Investigation
+                        </span>
+                    </a>
+
+                    <!-- INTERNAL REVENUE SERVICE -->
+                    <a
+                        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIQgr_GJrHYuuWILTknaidUqpI-e0TifvxQsHgMB84kg&s=10"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="affiliation-badge"
+                        title="Internal Revenue Service (IRS)"
+                    >
+                        <span class="affiliation-logo">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIQgr_GJrHYuuWILTknaidUqpI-e0TifvxQsHgMB84kg&s=10"
+                                alt="Internal Revenue Service (IRS)"
+                                loading="eager"
+                                fetchpriority="high"
+                                decoding="sync"
+                            >
+                        </span>
+                        <span class="affiliation-name">
+                            Internal Revenue<br>
+                            Service
+                        </span>
+                    </a>
+
+                    <!-- INTERPOL -->
+                    <a
+                        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN_AZRIfYbU_FV4Aapz4YbxTRFdXiilPYd6PviofDK2Y-PzJ_NtO8karHx&s=10"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="affiliation-badge"
+                        title="INTERPOL"
+                    >
+                        <span class="affiliation-logo">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN_AZRIfYbU_FV4Aapz4YbxTRFdXiilPYd6PviofDK2Y-PzJ_NtO8karHx&s=10"
+                                alt="INTERPOL"
+                                loading="eager"
+                                fetchpriority="high"
+                                decoding="sync"
+                            >
+                        </span>
+                        <span class="affiliation-name">
+                            INTERPOL
+                        </span>
+                    </a>
+
+                    <!-- ANTI-MONEY LAUNDERING -->
+                    <a
+                        href="https://thumbs.dreamstime.com/b/aml-anti-money-laundering-aml-anti-money-laundering-concept-134041260.jpg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="affiliation-badge"
+                        title="Anti-Money Laundering (AML)"
+                    >
+                        <span class="affiliation-logo">
+                            <img
+                                src="https://thumbs.dreamstime.com/b/aml-anti-money-laundering-aml-anti-money-laundering-concept-134041260.jpg"
+                                alt="Anti-Money Laundering (AML)"
+                                loading="eager"
+                                fetchpriority="high"
+                                decoding="sync"
+                            >
+                        </span>
+                        <span class="affiliation-name">
+                            Anti-Money<br>
+                            Laundering
+                        </span>
+                    </a>
+
+                    <!-- U.S. DEPARTMENT OF JUSTICE -->
+                    <a
+                        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBvskfZmLQ28homoSqtahWJrdBNLpdMZBjvHpgl8PVGQ&s=10"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="affiliation-badge"
+                        title="U.S. Department of Justice"
+                    >
+                        <span class="affiliation-logo">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBvskfZmLQ28homoSqtahWJrdBNLpdMZBjvHpgl8PVGQ&s=10"
+                                alt="U.S. Department of Justice"
+                                loading="eager"
+                                fetchpriority="high"
+                                decoding="sync"
+                            >
+                        </span>
+                        <span class="affiliation-name">
+                            U.S. Department<br>
+                            of Justice
+                        </span>
+                    </a>
+
+                    <!-- CYBER COMPLIANCE SERVICES -->
+                    <a
+                        href="https://cybersecuritycs.com/wp-content/uploads/2022/09/cropped-cropped-Color-Logo.jpg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="affiliation-badge"
+                        title="Cyber Compliance Services"
+                        style="min-width:150px;"
+                    >
+                        <span class="affiliation-logo">
+                            <img
+                                src="https://cybersecuritycs.com/wp-content/uploads/2022/09/cropped-cropped-Color-Logo.jpg"
+                                alt="Cyber Compliance Services"
+                                loading="eager"
+                                fetchpriority="high"
+                                decoding="sync"
+                            >
+                        </span>
+                        <span class="affiliation-name">
+                            Cyber Compliance<br>
+                            Services
+                        </span>
+                    </a>
+
+                </div>
+
+            <!-- =================================================
+                 SECURITY FOOTER
+                 ================================================= -->
+
+            <div
+                class="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-center items-center gap-3 text-center"
+            >
+
+                <span
+                    class="text-[8px] text-slate-600 uppercase tracking-widest"
+                >
+
+                    <i
+                        class="fa-solid fa-lock mr-1 text-brand-500"
+                    ></i>
+
+                    Secure Operations
+
+                </span>
+
+
+                <span
+                    class="hidden sm:inline text-slate-700"
+                >
+                    •
+                </span>
+
+
+                <span
+                    class="text-[8px] text-slate-600 uppercase tracking-widest"
+                >
+
+                    Confidential Case Handling
+
+                </span>
+
+
+                <span
+                    class="hidden sm:inline text-slate-700"
+                >
+                    •
+                </span>
+
+
+                <span
+                    class="text-[8px] text-slate-600 uppercase tracking-widest"
+                >
+
+                    Global Investigation Network
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script>
+
+
+        /* =====================================================
+           AOS
+           ===================================================== */
+
+        AOS.init({
+
+            once:
+                true,
+
+            offset:
+                30,
+
+            duration:
+                800,
+
+            easing:
+                'ease-out-cubic'
+
+        });
+
+
+
+        /* =====================================================
+           MOBILE MENU
+           ===================================================== */
+
+        const mobileMenuButton =
+            document.getElementById(
+                'mobile-menu-btn'
+            );
+
+
+        const mobileMenu =
+            document.getElementById(
+                'mobile-menu'
+            );
+
+
+        mobileMenuButton.addEventListener(
+            'click',
+            () => {
+
+                const isHidden =
+                    mobileMenu.classList.contains(
+                        'hidden'
+                    );
+
+
+                mobileMenu.classList.toggle(
+                    'hidden'
+                );
+
+
+                mobileMenuButton.setAttribute(
+                    'aria-expanded',
+                    String(isHidden)
+                );
+
+
+                const icon =
+                    mobileMenuButton.querySelector(
+                        'i'
+                    );
+
+
+                if (isHidden) {
+
+                    icon.classList.remove(
+                        'fa-bars'
+                    );
+
+                    icon.classList.add(
+                        'fa-xmark'
+                    );
+
+                } else {
+
+                    icon.classList.remove(
+                        'fa-xmark'
+                    );
+
+                    icon.classList.add(
+                        'fa-bars'
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           CLOSE MOBILE MENU
+           ===================================================== */
+
+        document
+            .querySelectorAll(
+                '#mobile-menu a'
+            )
+            .forEach(
+                link => {
+
+                    link.addEventListener(
+                        'click',
+                        () => {
+
+                            mobileMenu.classList.add(
+                                'hidden'
+                            );
+
+
+                            mobileMenuButton.setAttribute(
+                                'aria-expanded',
+                                'false'
+                            );
+
+
+                            const icon =
+                                mobileMenuButton.querySelector(
+                                    'i'
+                                );
+
+
+                            icon.classList.remove(
+                                'fa-xmark'
+                            );
+
+
+                            icon.classList.add(
+                                'fa-bars'
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =====================================================
+           SLIDER
+           ===================================================== */
+
+        const track =
+            document.getElementById(
+                'sliderTrack'
+            );
+
+
+        const prevBtn =
+            document.getElementById(
+                'prevBtn'
+            );
+
+
+        const nextBtn =
+            document.getElementById(
+                'nextBtn'
+            );
+
+
+        const items =
+            document.querySelectorAll(
+                '.slider-item'
+            );
+
+
+        let currentIndex =
+            0;
+
+
+        let itemWidth =
+            items.length
+                ? items[0].getBoundingClientRect().width
+                : 0;
+
+
+        function getVisibleItems() {
+
+            if (
+                window.innerWidth >= 1024
+            ) {
+
+                return 3;
+
+            }
+
+
+            if (
+                window.innerWidth >= 768
+            ) {
+
+                return 2;
+
+            }
+
+
+            return 1;
+
+        }
+
+
+        let maxIndex =
+            Math.max(
+                0,
+                items.length -
+                getVisibleItems()
+            );
+
+
+
+        function updateSlider() {
+
+            if (!track) {
+
+                return;
+
+            }
+
+
+            track.style.transform =
+                `translateX(-${
+                    currentIndex *
+                    itemWidth
+                }px)`;
+
+        }
+
+
+
+        nextBtn.addEventListener(
+            'click',
+            () => {
+
+                if (
+                    currentIndex <
+                    maxIndex
+                ) {
+
+                    currentIndex++;
+
+                } else {
+
+                    currentIndex =
+                        0;
+
+                }
+
+
+                updateSlider();
+
+            }
+        );
+
+
+
+        prevBtn.addEventListener(
+            'click',
+            () => {
+
+                if (
+                    currentIndex >
+                    0
+                ) {
+
+                    currentIndex--;
+
+                } else {
+
+                    currentIndex =
+                        maxIndex;
+
+                }
+
+
+                updateSlider();
+
+            }
+        );
+
+
+
+        window.addEventListener(
+            'resize',
+            () => {
+
+                if (!items.length) {
+
+                    return;
+
+                }
+
+
+                itemWidth =
+                    items[0]
+                        .getBoundingClientRect()
+                        .width;
+
+
+                maxIndex =
+                    Math.max(
+                        0,
+                        items.length -
+                        getVisibleItems()
+                    );
+
+
+                if (
+                    currentIndex >
+                    maxIndex
+                ) {
+
+                    currentIndex =
+                        maxIndex;
+
+                }
+
+
+                updateSlider();
+
+            }
+        );
+
+
+
+        /* =====================================================
+           AUTO SLIDER
+           ===================================================== */
+
+        let slideInterval =
+            setInterval(
+                () => {
+
+                    nextBtn.click();
+
+                },
+                4500
+            );
+
+
+
+        const sliderContainer =
+            document.querySelector(
+                '.slider-container'
+            );
+
+
+        if (sliderContainer) {
+
+            sliderContainer.addEventListener(
+                'mouseenter',
+                () => {
+
+                    clearInterval(
+                        slideInterval
+                    );
+
+                }
+            );
+
+
+            sliderContainer.addEventListener(
+                'mouseleave',
+                () => {
+
+                    slideInterval =
+                        setInterval(
+                            () => {
+
+                                nextBtn.click();
+
+                            },
+                            4500
+                        );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           FORM DATA
+           ===================================================== */
+
+        function getFormData() {
+
+            return {
+
+                name:
+                    document
+                        .getElementById(
+                            'ticketName'
+                        )
+                        .value
+                    ||
+                    'User',
+
+
+                amount:
+                    document
+                        .getElementById(
+                            'ticketAmount'
+                        )
+                        .value
+                    ||
+                    'Not specified',
+
+
+                issue:
+                    document
+                        .getElementById(
+                            'ticketIssue'
+                        )
+                        .value
+                    ||
+                    'Not specified'
+
+            };
+
+        }
+
+
+
+        /* =====================================================
+           WHATSAPP
+           ===================================================== */
+
+        function sendTicketWA() {
+
+            const data =
+                getFormData();
+
+
+            const text =
+                encodeURIComponent(
+
+                    `*New Asset Recovery Inquiry*\n\n` +
+
+                    `*Name:* ${data.name}\n` +
+
+                    `*Amount Lost:* ${data.amount}\n` +
+
+                    `*Issue:* ${data.issue}`
+
+                );
+
+
+            window.open(
+
+                `https://wa.me/351961238035?text=${text}`,
+
+                '_blank',
+
+                'noopener,noreferrer'
+
+            );
+
+        }
+
+
+
+        /* =====================================================
+           EMAIL
+           ===================================================== */
+
+        function sendTicketEmail() {
+
+            const data =
+                getFormData();
+
+
+            const body =
+                encodeURIComponent(
+
+                    `New Asset Recovery Inquiry\n\n` +
+
+                    `Name: ${data.name}\n` +
+
+                    `Amount Lost: ${data.amount}\n` +
+
+                    `Issue: ${data.issue}`
+
+                );
+
+
+            window.location.href =
+
+                `mailto:assetsrecoveryinvestigatory@gmail.com` +
+
+                `?subject=Asset Recovery Case - ${
+                    encodeURIComponent(
+                        data.name
+                    )
+                }` +
+
+                `&body=${body}`;
+
+        }
+
+
+
+        /* =====================================================
+           FORCE ALL IMAGES TO LOAD IMMEDIATELY
+           ===================================================== */
+
+        document.addEventListener(
+            'DOMContentLoaded',
+            () => {
+
+                document
+                    .querySelectorAll(
+                        'img'
+                    )
+                    .forEach(
+                        image => {
+
+                            image.setAttribute(
+                                'loading',
+                                'eager'
+                            );
+
+
+                            image.setAttribute(
+                                'fetchpriority',
+                                'high'
+                            );
+
+
+                            image.setAttribute(
+                                'decoding',
+                                'sync'
+                            );
+
+                        }
+                    );
+
+
+                if (items.length) {
+
+                    itemWidth =
+                        items[0]
+                            .getBoundingClientRect()
+                            .width;
+
+                }
+
+
+                updateSlider();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
